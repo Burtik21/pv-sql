@@ -21,6 +21,6 @@ def password_policy_check(username, password):
 
 
 username = "JanNovak"
-password = "heSlo21JanN???"
+password = "heSlo21Jan???"
 result = password_policy_check(username, password)
 print(result)

@@ -3,7 +3,7 @@ import re
 
 def password_policy_check(username, password):
 
-    regex = '^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{10,}$'
+    regex = r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9])(?!.*[\'\";`])(?=.*[^\w\s]).{10,}$'
 
     if not re.match(regex, password):
         return "heslo je neplatné"
@@ -21,6 +21,6 @@ def password_policy_check(username, password):
 
 
 username = "JanNovak"
-password = "heSlo21JanN???"
+password = "heSlo21Jan??"
 result = password_policy_check(username, password)
 print(result)
